@@ -1,0 +1,2 @@
+rsync -av --exclude=.svn --exclude=book* --exclude=*~ ../figures/ /home/dsarkar/public_html/lattice-scripts/
+rsync -av --exclude=.svn --exclude=book* --exclude=*~ ../figures/ mamba:dsarkar.fhcrc.org/lattice/book/
