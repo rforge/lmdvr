@@ -38,6 +38,12 @@ var global_theme;
 var cur_chap, cur_fig, cur_code;
 var loc_base;
 
+/* For now, we'll serve images from the Hutch, as we don't want to put
+   a bunch into SVN unless we're pretty sure that these are the final
+   versions (which they probably are not, as we want to get better
+   anti-aliasing in place)  */
+var image_src;
+
 function setLocBase() {
     var pos;
     loc_base = location.href;
@@ -81,6 +87,10 @@ function setPermaLink() {
 }
 
 function initialize(theme) {
+
+    image_src = "http://dsarkar.fhcrc.org/lattice/book/images/";
+    // for relative links: image_src = "images/" 
+
     var cookieValue;
     global_theme = "";
     cur_chap = "";
@@ -116,8 +126,8 @@ function setTheme(theme) {
     if (global_theme == theme) return;
     global_theme = theme;
     if (cur_fig != "") {
-	document.getElementById("IMAGE").src = "images/loading.png";
-	document.getElementById("IMAGE").src = "images/Figure_" +
+	document.getElementById("IMAGE").src = image_src + "loading.png";
+	document.getElementById("IMAGE").src = image_src + "Figure_" +
 	    cur_fig + "_" + global_theme + ".png";
     }
     if (0) // (theme == "stdClassic")
@@ -166,8 +176,8 @@ function chapterClicked(chap, resetFig) {
 
 function figureClicked(fig) {
     if (fig == cur_fig) return null;
-    document.getElementById("IMAGE").src = "images/loading.png";
-    document.getElementById("IMAGE").src = "images/Figure_" +
+    document.getElementById("IMAGE").src = image_src + "loading.png";
+    document.getElementById("IMAGE").src = image_src + "Figure_" +
 	fig + "_" + global_theme + ".png";
     if (cur_chap != "") {
 	/* document.getElementById("CHAPTER." + cur_chap).className = "topic"; */
