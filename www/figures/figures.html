@@ -234,7 +234,10 @@ href="style.css"/>
       <li class="topic" id="FIGURE.14_05" onClick='figureClicked("14_05")'>Figure 14.5</li>
     </ul></li>
   </ul>
-
+  <hr>
+  <ul class="ChapterList" id="ERRATA">
+    <li><p title="Errata" class="topic" id="CHAPTER.ERRATA" onClick = 'showErrata()'>Errata</p>
+  </ul>
 
   <!-- 
   placeholders:
@@ -281,14 +284,16 @@ href="style.css"/>
     selections persistent across sessions.  </p>
 
     <p>Click on the chapter links for a brief summary and a list of
-    figures from that chapter.  Click on the figure links to see the
-    corresponding plots and code listings. </p>
+    figures, as well as a listing of code from that chapter.  Click on
+    the figure links to see the corresponding plots. </p>
 
+    <!--
     <p> Code listings are currently only available for entire
     chapters.  Providing minimal code for each figure is a bit more
     work, and will be made available once the contents of the book are
     finalized.
     </p>
+    -->
 
     <p> Each figure is available in several versions, representing
     different &quot;themes&quot;.  Most of the code was written for
@@ -301,6 +306,21 @@ href="style.css"/>
     
   </div>
 
+
+  <div class="summaryHidden" id="SUMMARY.ERRATA">
+    <h2>Errata</h2>
+    <p>[Fixed in the second printing]</p>
+    <ul>
+      <li>Page 45: Figure 3.9 has<br>
+      <code>xlab="Standard Normal Quantiles"</code>.<br> This should
+      be<br>
+      <code>xlab="Uniform(0, 1) Quantiles"</code>.
+      </li>
+
+      <li>Page 109: &quot;Figure 6.4&quot; should be &quot;Figure 6.15&quot;</li>
+    </ul>
+  </div>
+  
 
 <!-- The next part has hard-coded summaries for all chapters.
 Placehlders can be generated with:
@@ -322,8 +342,7 @@ Placehlders can be generated with:
       <li>Superposition (a.k.a. grouping)</li>
       <li>&quot;trellis&quot; objects</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
 
   <div class="summaryHidden" id="SUMMARY.02">
@@ -337,8 +356,7 @@ Placehlders can be generated with:
       <li>Scales and Axes</li>
       <li>Panel functions</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.03">
     <h2>Visualizing Univariate Distributions</h2>
@@ -351,8 +369,7 @@ Placehlders can be generated with:
       <li>Comparative Strip charts</li>
       <li>Discrete distributions</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.04">
     <h2>Displaying Multiway Tables</h2>
@@ -362,8 +379,7 @@ Placehlders can be generated with:
       <li>Bar chart</li>
       <li>Reordering factor levels</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.05">
     <h2>Scatter Plots and Extensions</h2>
@@ -376,8 +392,7 @@ Placehlders can be generated with:
       <li>Scatter plot matrix</li>
       <li>Parallel coordinate plot</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.06">
     <h2>Trivariate Displays</h2>
@@ -389,8 +404,7 @@ Placehlders can be generated with:
       <li>Wireframe rendering</li>
       <li>Parameterized surfaces</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.07">
     <h2>Graphical Parameters and Other Settings</h2>
@@ -404,8 +418,7 @@ Placehlders can be generated with:
       <li>Non-graphical options</li>
       <li>Making customizations persistent</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.08">
     <h2>Plot Coordinates and Axis Annotation</h2>
@@ -416,8 +429,7 @@ Placehlders can be generated with:
       <li>Axis annotation</li>
       <li>The <code>scales</code> argument</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.09">
     <h2>Labels and Legends</h2>
@@ -429,8 +441,7 @@ Placehlders can be generated with:
       <li>Dropping unused levels of grouping variable</li>
       <li>Page annotation</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.10">
     <h2>Data Manipulation and Related Topics</h2>
@@ -443,8 +454,7 @@ Placehlders can be generated with:
       <li>Ordering levels of categorical variables</li>
       <li>Controlling the appearance of strips</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.11">
     <h2>Manipulating the &quot;trellis&quot; object</h2>
@@ -454,8 +464,7 @@ Placehlders can be generated with:
       <li>Tukey mean-difference plot</li>
       <li>Other specialized manipulations</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.12">
     <h2>Interacting with Trellis Displays</h2>
@@ -465,8 +474,7 @@ Placehlders can be generated with:
       <li>Grid viewports as used in <code>lattice</code></li>
       <li>API for interactive additions</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <!-- p>Click on figure links on the left to see figures.</p -->
   </div>
   <div class="summaryHidden" id="SUMMARY.13">
     <h2>Advanced Panel Functions</h2>
@@ -475,8 +483,7 @@ Placehlders can be generated with:
       <li>Built-in panel and accessors functions</li>
       <li>Examples</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
   <div class="summaryHidden" id="SUMMARY.14">
     <h2>New Trellis Displays</h2>
@@ -485,8 +492,7 @@ Placehlders can be generated with:
       <li>Examples of S3 and S4 methods</li>
       <li>Examples of new high level functions</li>
     </ul>
-    <p>Click on figure links on the left to see figures and code
-    listings.</p>
+    <p>Click on figure links on the left to see figures.</p>
   </div>
 
 
@@ -2218,7 +2224,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Sun May 11 12:32:59 PDT 2008 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Tue Aug 26 02:18:33 PDT 2008 <!-- hhmts end -->
 </div>
 
 

@@ -158,10 +158,10 @@ ul.FigureList li.htopic:hover
 {				
   background: #cce6ff;
 }
-div.summaryContainer ul
-{
-  list-style: none;
-}
+/* div.summaryContainer ul */
+/* { */
+/*   list-style: none; */
+/* } */
 div.footer { display: none; }
 
 span.switchLayout 

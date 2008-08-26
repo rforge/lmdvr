@@ -142,12 +142,43 @@ function setTheme(theme) {
 }
 
 
+function showErrata() {
+    if (cur_chap != "") {
+	document.getElementById("FIGURELIST." + cur_chap).className = "FigureListHidden";
+	document.getElementById("CHAPTER." + cur_chap).className = "topic";
+	document.getElementById("SUMMARY." + cur_chap).className = "summaryHidden";
+	document.getElementById("CODE." + cur_chap).className = "codeListingHidden";
+    }
+    if (cur_fig != "") {
+	document.getElementById("FIGURE." + cur_fig).className = "topic";
+	document.getElementById("IMAGE.CONTAINER").className = "imageHidden";
+    }
+/*     global_theme = ""; */
+/*     cur_chap = ""; */
+/*     cur_fig = ""; */
+/*     cur_code = ""; */
+    resetCookies();
+    setPermaLink();
+    document.getElementById("CHAPTER.ERRATA").className = "htopic";
+    document.getElementById("SWITCH.LAYOUT").style.display = "none";
+    document.getElementById("SUMMARY.00").className = "summaryHidden";
+    document.getElementById("SUMMARY.ERRATA").className = "summary";
+    document.getElementById("SUMMARY.CONTAINER").className = "summaryContainer";
+}
+
+function hideErrata() {
+    document.getElementById("CHAPTER.ERRATA").className = "topic";
+    document.getElementById("SUMMARY.ERRATA").className = "summaryHidden";
+}
+
+
 function chapterClicked(chap, resetFig) {
     var showFigList = 1;
     if (resetFig) {
 	setCookie("figure=", "");
-	document.getElementById("SWITCH.LAYOUT").style.display = "none";
+	/* document.getElementById("SWITCH.LAYOUT").style.display = "none"; */
     }
+    hideErrata();
     /* if (chap == cur_chap) return null; */
     if (cur_chap != "") {
 	if (cur_chap == chap && cur_fig == "" && document.getElementById("FIGURELIST." + cur_chap).className == "FigureList") {
@@ -167,6 +198,8 @@ function chapterClicked(chap, resetFig) {
     document.getElementById("SUMMARY.00").className = "summaryHidden";
     document.getElementById("SUMMARY." + cur_chap).className = "summary";
     document.getElementById("SUMMARY.CONTAINER").className = "summaryContainer";
+    document.getElementById("CODE." + cur_chap).className = "codeListing";
+    document.getElementById("SWITCH.LAYOUT").style.display = "inline";
     if (showFigList) document.getElementById("FIGURELIST." + cur_chap).className = "FigureList";
     document.getElementById("CHAPTER." + cur_chap).className = "htopic";
     setCookie("chapter=", chap);
@@ -182,8 +215,6 @@ function figureClicked(fig) {
     if (cur_chap != "") {
 	/* document.getElementById("CHAPTER." + cur_chap).className = "topic"; */
 	document.getElementById("SUMMARY." + cur_chap).className = "summaryHidden";
-	document.getElementById("CODE." + cur_chap).className = "codeListing";
-	document.getElementById("SWITCH.LAYOUT").style.display = "inline";
 	/* cur_chap = ""; */
     }
     if (cur_fig != "") {
