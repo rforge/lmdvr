@@ -303,22 +303,40 @@ href="style.css"/>
     better in color.  In some cases (e.g., Figure 2.7), attempts to
     write code tuned to the black and white theme has made the color
     versions less useful than they could have been.  </p>
-    
+
+    <h2>Requirements</h2>
+
+    <p> Several R packages are needed to run all the code given here.
+Some (<code>grid</code>, <code>lattice</code>, and <code>MASS</code>)
+should already be installed along with R.  The remaining ones, along
+with their dependencies, can be downloaded from <a
+href="http://cran.r-project.org" >CRAN</a> and <a
+href="http://www.bioconductor.org" >Bioconductor</a> using the
+following code snippet:
+<pre>
+install.packages(c("latticeExtra", "copula", "ellipse", "gridBase",
+                   "locfit", "logspline", "mapproj", "maps", "MEMSS",
+                   "mlmRev", "RColorBrewer"))
+source("http://bioconductor.org/biocLite.R")
+biocLite(c("flowCore", "flowViz", "hexbin"))
+</pre>
+  </p>
+
+
   </div>
 
 
   <div class="summaryHidden" id="SUMMARY.ERRATA">
     <h2>Errata</h2>
     <p>[Fixed in the second printing]</p>
-    <ul>
-      <li>Page 45: Figure 3.9 has<br>
-      <code>xlab="Standard Normal Quantiles"</code>.<br> This should
-      be<br>
-      <code>xlab="Uniform(0, 1) Quantiles"</code>.
-      </li>
-
-      <li>Page 109: &quot;Figure 6.4&quot; should be &quot;Figure 6.15&quot;</li>
-    </ul>
+    <dl>
+      <dt>Page 45
+      <dd>Figure 3.9 has <code>xlab="Standard Normal
+	Quantiles"</code>. This should be <code>xlab="Uniform(0, 1)
+	Quantiles"</code>.
+      <dt>Page 109
+      <dd>&quot;Figure 6.4&quot; should be &quot;Figure 6.15&quot;
+    </dl>
   </div>
   
 
@@ -2224,7 +2242,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Tue Aug 26 02:18:33 PDT 2008 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Tue Aug 26 17:40:49 PDT 2008 <!-- hhmts end -->
 </div>
 
 
