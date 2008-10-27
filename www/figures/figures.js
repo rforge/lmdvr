@@ -153,6 +153,7 @@ function showErrata() {
 	document.getElementById("FIGURE." + cur_fig).className = "topic";
 	document.getElementById("IMAGE.CONTAINER").className = "imageHidden";
     }
+    hideExtracts();
 /*     global_theme = ""; */
 /*     cur_chap = ""; */
 /*     cur_fig = ""; */
@@ -172,6 +173,34 @@ function hideErrata() {
 }
 
 
+function showExtracts() {
+    if (cur_chap != "") {
+	document.getElementById("FIGURELIST." + cur_chap).className = "FigureListHidden";
+	document.getElementById("CHAPTER." + cur_chap).className = "topic";
+	document.getElementById("SUMMARY." + cur_chap).className = "summaryHidden";
+	document.getElementById("CODE." + cur_chap).className = "codeListingHidden";
+    }
+    if (cur_fig != "") {
+	document.getElementById("FIGURE." + cur_fig).className = "topic";
+	document.getElementById("IMAGE.CONTAINER").className = "imageHidden";
+    }
+    hideErrata();
+    resetCookies();
+    setPermaLink();
+    document.getElementById("CHAPTER.EXTRACTS").className = "htopic";
+    document.getElementById("SWITCH.LAYOUT").style.display = "none";
+    document.getElementById("SUMMARY.00").className = "summaryHidden";
+    document.getElementById("SUMMARY.EXTRACTS").className = "summary";
+    document.getElementById("SUMMARY.CONTAINER").className = "summaryContainer";
+}
+
+function hideExtracts() {
+    document.getElementById("CHAPTER.EXTRACTS").className = "topic";
+    document.getElementById("SUMMARY.EXTRACTS").className = "summaryHidden";
+}
+
+
+
 function chapterClicked(chap, resetFig) {
     var showFigList = 1;
     if (resetFig) {
@@ -179,6 +208,7 @@ function chapterClicked(chap, resetFig) {
 	/* document.getElementById("SWITCH.LAYOUT").style.display = "none"; */
     }
     hideErrata();
+    hideExtracts();
     /* if (chap == cur_chap) return null; */
     if (cur_chap != "") {
 	if (cur_chap == chap && cur_fig == "" && document.getElementById("FIGURELIST." + cur_chap).className == "FigureList") {

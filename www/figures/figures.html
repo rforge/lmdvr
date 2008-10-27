@@ -235,10 +235,25 @@ href="style.css"/>
     </ul></li>
   </ul>
   <hr>
+  <ul class="ChapterList" id="EXTRACTS">
+    <li><p title="Preface and sample chapter" class="topic" id="CHAPTER.EXTRACTS" onClick = 'showExtracts()'>Extracts</p>
+  </ul>
   <ul class="ChapterList" id="ERRATA">
     <li><p title="Errata" class="topic" id="CHAPTER.ERRATA" onClick = 'showErrata()'>Errata</p>
   </ul>
 
+
+<!--   <ul class="ChapterList" id="EXTRACTS"> -->
+<!--     <li><p title="Preface and sample chapter" class="topic" id="CHAPTER.EXTRACTS" >Extracts</p> -->
+<!--     <ul class="FigureList" id="FIGURELIST.EXTRACTS"> -->
+<!--       <li class="topic" id="EXTRACT.PREFACE" onClick='figureClicked("09_01")'><a href="preface.pdf" >Preface/TOC</a></li> -->
+<!--       <li class="topic" id="EXTRACT.CHAPTER2" onClick='figureClicked("09_02")'><a href="chapter2.pdf" >Chapter 2</a></li> -->
+<!--     </ul></li> -->
+<!--   </ul> -->
+
+
+    
+  
   <!-- 
   placeholders:
 
@@ -328,6 +343,10 @@ biocLite(c("flowCore", "flowViz", "hexbin"))
 
   <div class="summaryHidden" id="SUMMARY.ERRATA">
     <h2>Errata</h2>
+    <dl>
+      <dt>Page 59
+      <dd>&quot;Table 4.2&quot; should be &quot;Table 4.1&quot;
+    </dl>
     <p>[Fixed in the second printing]</p>
     <dl>
       <dt>Page 45
@@ -340,6 +359,18 @@ biocLite(c("flowCore", "flowViz", "hexbin"))
   </div>
   
 
+  <div class="summaryHidden" id="SUMMARY.EXTRACTS">
+    <h2>Extracts from the book</h2>
+    <ul>
+      <li><a href="http://dsarkar.fhcrc.org/lattice/book/preface.pdf" >Preface and Table of contents</a></li>
+      <li><a href="http://dsarkar.fhcrc.org/lattice/book/chapter2.pdf" >Chapter 2</a></li>
+    </ul>
+  </div>
+  
+
+
+
+  
 <!-- The next part has hard-coded summaries for all chapters.
 Placehlders can be generated with:
 
@@ -2242,7 +2273,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Tue Aug 26 17:40:49 PDT 2008 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Sun Oct 26 17:08:36 PDT 2008 <!-- hhmts end -->
 </div>
 
 
