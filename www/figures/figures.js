@@ -154,6 +154,7 @@ function showErrata() {
 	document.getElementById("IMAGE.CONTAINER").className = "imageHidden";
     }
     hideExtracts();
+    hideReviews();
 /*     global_theme = ""; */
 /*     cur_chap = ""; */
 /*     cur_fig = ""; */
@@ -185,6 +186,7 @@ function showExtracts() {
 	document.getElementById("IMAGE.CONTAINER").className = "imageHidden";
     }
     hideErrata();
+    hideReviews();
     resetCookies();
     setPermaLink();
     document.getElementById("CHAPTER.EXTRACTS").className = "htopic";
@@ -200,6 +202,34 @@ function hideExtracts() {
 }
 
 
+function showReviews() {
+    if (cur_chap != "") {
+	document.getElementById("FIGURELIST." + cur_chap).className = "FigureListHidden";
+	document.getElementById("CHAPTER." + cur_chap).className = "topic";
+	document.getElementById("SUMMARY." + cur_chap).className = "summaryHidden";
+	document.getElementById("CODE." + cur_chap).className = "codeListingHidden";
+    }
+    if (cur_fig != "") {
+	document.getElementById("FIGURE." + cur_fig).className = "topic";
+	document.getElementById("IMAGE.CONTAINER").className = "imageHidden";
+    }
+    hideErrata();
+    hideExtracts();
+    resetCookies();
+    setPermaLink();
+    document.getElementById("CHAPTER.REVIEWS").className = "htopic";
+    document.getElementById("SWITCH.LAYOUT").style.display = "none";
+    document.getElementById("SUMMARY.00").className = "summaryHidden";
+    document.getElementById("SUMMARY.REVIEWS").className = "summary";
+    document.getElementById("SUMMARY.CONTAINER").className = "summaryContainer";
+}
+
+function hideReviews() {
+    document.getElementById("CHAPTER.REVIEWS").className = "topic";
+    document.getElementById("SUMMARY.REVIEWS").className = "summaryHidden";
+}
+
+
 
 function chapterClicked(chap, resetFig) {
     var showFigList = 1;
@@ -209,6 +239,7 @@ function chapterClicked(chap, resetFig) {
     }
     hideErrata();
     hideExtracts();
+    hideReviews();
     /* if (chap == cur_chap) return null; */
     if (cur_chap != "") {
 	if (cur_chap == chap && cur_fig == "" && document.getElementById("FIGURELIST." + cur_chap).className == "FigureList") {
