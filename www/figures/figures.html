@@ -780,12 +780,12 @@ bwplot(Days ~ log(FSC.H), gvhd10,
 <span class="comment">## Figure 3.15</span>
 stripplot(factor(mag) ~ depth, quakes)
 
-<span class="comment">## Figure 3.</span>
+<span class="comment">## Figure 3.16</span>
 stripplot(depth ~ factor(mag), quakes, 
           jitter.data = TRUE, alpha = 0.6,
           xlab = "Magnitude (Richter)", ylab = "Depth (km)")
 
-<span class="comment">## Figure 3.16</span>
+<span class="comment">## Figure 3.17</span>
 stripplot(sqrt(abs(residuals(lm(yield~variety+year+site)))) ~ site, 
           data = barley, groups = year, jitter.data = TRUE,
           auto.key = list(points = TRUE, lines = TRUE, columns = 2),
@@ -1796,14 +1796,6 @@ qqmath(~gcsescore | factor(score), Chem97, groups = gender,
        xlab = "Standard normal quantiles", 
        ylab = "Average GCSE score")
 
-<span class="comment">## Figure 10.24</span>
-qqmath(~gcsescore | factor(score), Chem97, groups = gender, 
-       type = c("l", "g"),  aspect = "xy", 
-       auto.key = list(points = FALSE, lines = TRUE, columns = 2),
-       f.value = ppoints(100), strip = strip.custom(style = 4),
-       xlab = "Standard normal quantiles", 
-       ylab = "Average GCSE score")
-
 strip.combined <- 
     function(which.given, which.panel, factor.levels, ...) {
     if (which.given == 1) {
@@ -1817,13 +1809,25 @@ strip.combined <-
     }
 }
 
-<span class="comment">## Figure 10.25</span>
+<span class="comment">## Figure 10.24</span>
 qqmath(~ gcsescore | factor(score) + gender, Chem97, 
        f.value = ppoints(100), type = c("l", "g"), aspect = "xy",
        strip = strip.combined,
        par.strip.text = list(lines = 0.5),
        xlab = "Standard normal quantiles", 
        ylab = "Average GCSE score")
+
+morris <- barley$site == "Morris"
+barley$year[morris] <-
+    ifelse(barley$year[morris] == "1931", "1932", "1931")
+
+<span class="comment">## Figure 10.25</span>
+stripplot(sqrt(abs(residuals(lm(yield ~ variety+year+site)))) ~ site,
+          data = barley, groups = year, jitter.data = TRUE,
+          auto.key = list(points = TRUE, lines = TRUE, columns = 2),
+          type = c("p", "a"), fun = median,
+          ylab = expression(abs("Residual Barley Yield")^{1 / 2}))
+
 
 </div>
 <div class="codeListingHidden" id="CODE.11"><span class="comment">## Chapter 11</span>
@@ -2284,7 +2288,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Tue Oct 28 01:29:08 PDT 2008 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Sun Nov 16 01:53:50 PST 2008 <!-- hhmts end -->
 </div>
 
 
