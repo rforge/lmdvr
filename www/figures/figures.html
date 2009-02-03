@@ -1010,9 +1010,9 @@ update(trellis.last.object(),
        panel = function(...) {
            panel.xyplot(...)
            if (panel.number() == 2) {
-               at <- pretty(c(0, max.precip))
+               at <- pretty(c(0, maxp))
                panel.axis("right", half = FALSE,
-                          at = at * 80 / max.precip, labels = at)
+                          at = at * 80 / maxp, labels = at)
            }
        })
 
@@ -2289,7 +2289,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Fri Nov 21 16:43:31 PST 2008 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Tue Feb  3 09:00:11 PST 2009 <!-- hhmts end -->
 </div>
 
 

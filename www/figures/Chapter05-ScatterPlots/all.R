@@ -321,11 +321,12 @@ update(trellis.last.object(),
        panel = function(...) {
            panel.xyplot(...)
            if (panel.number() == 2) {
-               at <- pretty(c(0, max.precip))
+               at <- pretty(c(0, maxp))
                panel.axis("right", half = FALSE,
-                          at = at * 80 / max.precip, labels = at)
+                          at = at * 80 / maxp, labels = at)
            }
        })
+
 
 
 ## xyplot(min.temp + max.temp + I(80 * precip / max.precip) ~ day | month,
