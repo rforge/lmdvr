@@ -623,7 +623,7 @@ plot(tp2, split = c(1, 2, 1, 2), newpage = FALSE)
 </div>
 
 
-<div class="codeListingHidden" id="CODE.02"><span class="comment">## Chapter 2</span>
+<div class="codeListingHidden" id="CODE.02"><span class="comment">## Chapter 2 <a href="../code/Chapter02.R" >Plain text version</a></span>
 
 data(Oats, package = "MEMSS")
 
@@ -699,7 +699,7 @@ update(bc.titanic,
            panel.barchart(..., border = "transparent")
        })
 </div>
-<div class="codeListingHidden" id="CODE.03"><span class="comment">## Chapter 3</span>
+<div class="codeListingHidden" id="CODE.03"><span class="comment">## Chapter 3 <a href="../code/Chapter03.R" >Plain text version</a></span>
 
 <span class="comment">## Figure 3.1</span>
 densityplot(~ eruptions, data = faithful)
@@ -793,7 +793,7 @@ stripplot(sqrt(abs(residuals(lm(yield~variety+year+site)))) ~ site,
           type = c("p", "a"), fun = median,
           ylab = expression(abs("Residual Barley Yield")^{1 / 2}))
 </div>
-<div class="codeListingHidden" id="CODE.04"><span class="comment">## Chapter 4</span>
+<div class="codeListingHidden" id="CODE.04"><span class="comment">## Chapter 4 <a href="../code/Chapter04.R" >Plain text version</a></span>
 
 VADeaths
 class(VADeaths)
@@ -861,7 +861,7 @@ score.df <- as.data.frame(score.tab)
 barchart(Freq ~ score | gender, score.df, origin = 0)
 
 </div>
-<div class="codeListingHidden" id="CODE.05"><span class="comment">## Chapter 5</span>
+<div class="codeListingHidden" id="CODE.05"><span class="comment">## Chapter 5 <a href="../code/Chapter05.R" >Plain text version</a></span>
 
 <span class="comment">## Figure 5.1</span>
 xyplot(lat ~ long | cut(depth, 2), data = quakes)
@@ -1052,7 +1052,7 @@ parallel(~ asinh(gvhd10[c(3, 2, 4, 1, 5)]), data = gvhd10,
          subset = Days == "13", alpha = 0.01, lty = 1)
 
 </div>
-<div class="codeListingHidden" id="CODE.06"><span class="comment">## Chapter 6</span>
+<div class="codeListingHidden" id="CODE.06"><span class="comment">## Chapter 6 <a href="../code/Chapter06.R" >Plain text version</a></span>
   
 quakes$Magnitude <- equal.count(quakes$mag, 4)
 
@@ -1286,7 +1286,7 @@ levelplot(Population ~ Year * Age | Sex, data = USAge.df,
           aspect = "iso")
 
 </div>
-<div class="codeListingHidden" id="CODE.07"><span class="comment">## Chapter 7</span>
+<div class="codeListingHidden" id="CODE.07"><span class="comment">## Chapter 7 <a href="../code/Chapter07.R" >Plain text version</a></span>
 
 vad.plot <- 
     dotplot(reorder(Var2, Freq) ~ Freq | Var1,
@@ -1369,7 +1369,7 @@ levelplot(t(ans), colorkey = FALSE,
 show.settings()
 
 </div>
-<div class="codeListingHidden" id="CODE.08"><span class="comment">## Chapter 8</span>
+<div class="codeListingHidden" id="CODE.08"><span class="comment">## Chapter 8 <a href="../code/Chapter08.R" >Plain text version</a></span>
 
 <span class="comment">## Figure 8.1</span>
 stripplot(depth ~ factor(mag), data = quakes, jitter.data = TRUE, 
@@ -1477,7 +1477,7 @@ xyplot(nhtemp ~ time(nhtemp), aspect = "xy", type = "o",
                   col = c("black", "grey35")), columns = 2))
 
 </div>
-<div class="codeListingHidden" id="CODE.09"><span class="comment">## Chapter 9</span>
+<div class="codeListingHidden" id="CODE.09"><span class="comment">## Chapter 9 <a href="../code/Chapter09.R" >Plain text version</a></span>
 
 data(Cars93, package = "MASS")
 table(Cars93$Cylinders)
@@ -1557,7 +1557,7 @@ levelplot(t(scale(USArrests))[, ord.hc2],
 
 
 </div>
-<div class="codeListingHidden" id="CODE.10"><span class="comment">## Chapter 10</span>
+<div class="codeListingHidden" id="CODE.10"><span class="comment">## Chapter 10 <a href="../code/Chapter10.R" >Plain text version</a></span>
 
 Titanic1 <- as.data.frame(as.table(Titanic[, , "Adult" ,])) 
 Titanic1
@@ -1831,7 +1831,7 @@ stripplot(sqrt(abs(residuals(lm(yield ~ variety+year+site)))) ~ site,
 
 
 </div>
-<div class="codeListingHidden" id="CODE.11"><span class="comment">## Chapter 11</span>
+<div class="codeListingHidden" id="CODE.11"><span class="comment">## Chapter 11 <a href="../code/Chapter11.R" >Plain text version</a></span>
 
 methods(class = "trellis")
 methods(class = "shingle")
@@ -1911,7 +1911,7 @@ dimnames(baxy)
 useOuterStrips(baxy)
 
 </div>
-<div class="codeListingHidden" id="CODE.12"><span class="comment">## Chapter 12</span>
+<div class="codeListingHidden" id="CODE.12"><span class="comment">## Chapter 12 <a href="../code/Chapter12.R" >Plain text version</a></span>
 
 state <- data.frame(state.x77, state.region)
 trellis.vpname("xlab", prefix = "plot1")
@@ -1989,7 +1989,7 @@ update(trellis.last.object(),
 
 
 </div>
-<div class="codeListingHidden" id="CODE.13"><span class="comment">## Chapter 13</span>
+<div class="codeListingHidden" id="CODE.13"><span class="comment">## Chapter 13 <a href="../code/Chapter13.R" >Plain text version</a></span>
 
 panel.hypotrochoid <- function(r, d, cycles = 10, density = 30)
 {
@@ -2214,7 +2214,7 @@ mapplot(rownames(USCancerRates) ~ rate.male + rate.female,
         main = "Average yearly deaths due to cancer per 100000")
 
 </div>
-<div class="codeListingHidden" id="CODE.14"><span class="comment">## Chapter 14</span>
+<div class="codeListingHidden" id="CODE.14"><span class="comment">## Chapter 14 <a href="../code/Chapter14.R" >Plain text version</a></span>
 
 library("latticeExtra")
   
@@ -2289,7 +2289,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Wed Apr 29 12:57:34 PDT 2009 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Wed Apr 29 13:08:44 PDT 2009 <!-- hhmts end -->
 </div>
 
 
