@@ -340,24 +340,34 @@ biocLite(c("flowCore", "flowViz", "hexbin"))
 </pre>
   </p>
 
-
   </div>
-
 
   <div class="summaryHidden" id="SUMMARY.ERRATA">
     <h2>Errata</h2>
     <dl>
-      <dt>Page 59
-      <dd>&quot;Table 4.2&quot; should be &quot;Table 4.1&quot;
+      <dt>Page 226
+      <dd>The caption of Figure 12.6 should start with<br>
+	&quot;Updated form of Figure 12.5, ...&quot; (not 12.6).
     </dl>
+    <dl>
+      <dt>Pages 91-94
+      <dd>Figures 6.1 and 6.2 are mislabeled because their code has<br>
+	<code>cloud(depth ~ lat * long, xlab="Longitude", ylab="Latitude", ...)</code><br>
+	The correct labels should be 
+	<code>xlab="Latitude"</code> and <code>ylab="Longitude"</code>.
+    </dl>
+    <dl>
+      <dt>Page 59
+      <dd>&quot;Table 4.2&quot; should be &quot;Table 4.1&quot;.
+    </dl>
+    <hr>
     <p>[Fixed in the second printing]</p>
     <dl>
       <dt>Page 45
-      <dd>Figure 3.9 has <code>xlab="Standard Normal
-	Quantiles"</code>. This should be <code>xlab="Uniform(0, 1)
-	Quantiles"</code>.
+      <dd>Figure 3.9 has <code>xlab="Standard Normal Quantiles"</code>. <br>
+	This should be <code>xlab="Uniform(0, 1) Quantiles"</code>.
       <dt>Page 109
-      <dd>&quot;Figure 6.4&quot; should be &quot;Figure 6.15&quot;
+      <dd>&quot;Figure 6.4&quot; should be &quot;Figure 6.15&quot;.
     </dl>
   </div>
   
@@ -2307,9 +2317,10 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Mon Jun  8 15:33:23 PDT 2009 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Wed Nov 18 20:01:30 PST 2009 <!-- hhmts end -->
 </div>
 
 
   
 </body> </html>
+
