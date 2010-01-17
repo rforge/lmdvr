@@ -121,14 +121,20 @@ function resetCookies() {
     document.cookie = "code=";
 }
 
+function showLoading() {
+    document.getElementById("IMAGE").src = image_src + "loading.png";
+}
+function showFigure() {
+    document.getElementById("IMAGE").src = image_src + "Figure_" +
+	cur_fig + "_" + global_theme + ".png";
+}
 
 function setTheme(theme) {
     if (global_theme == theme) return;
     global_theme = theme;
     if (cur_fig != "") {
-	document.getElementById("IMAGE").src = image_src + "loading.png";
-	document.getElementById("IMAGE").src = image_src + "Figure_" +
-	    cur_fig + "_" + global_theme + ".png";
+	showLoading();
+	setTimeout('showFigure()', 500);
     }
     if (0) // (theme == "stdClassic")
 	document.body.style.background = "#909090";
@@ -270,9 +276,9 @@ function chapterClicked(chap, resetFig) {
 
 function figureClicked(fig) {
     if (fig == cur_fig) return null;
-    document.getElementById("IMAGE").src = image_src + "loading.png";
-    document.getElementById("IMAGE").src = image_src + "Figure_" +
-	fig + "_" + global_theme + ".png";
+    // document.getElementById("IMAGE").src = image_src + "loading.png";
+    // document.getElementById("IMAGE").src = image_src + "Figure_" +
+    // fig + "_" + global_theme + ".png";
     if (cur_chap != "") {
 	/* document.getElementById("CHAPTER." + cur_chap).className = "topic"; */
 	document.getElementById("SUMMARY." + cur_chap).className = "summaryHidden";
@@ -289,6 +295,8 @@ function figureClicked(fig) {
     document.getElementById("FIGURE." + fig).className = "htopic";
     cur_fig = fig;
     setCookie("figure=", fig);
+    showLoading();
+    setTimeout('showFigure()', 500);
 }
 
 
