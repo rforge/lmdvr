@@ -82,6 +82,7 @@ Figure_5.7 <- function() {
            as.table = TRUE, layout = c(5, 3),
            between = list(y = c(0, 1)),
            strip = function(...) {
+               require(grid)
                panel.fill(trellis.par.get("strip.background")$col[1])
                type <- types[panel.number()]
                grid.text(lab = sprintf('"%s"', type), 
@@ -154,6 +155,8 @@ Figure_5.12 <- function() {
 }
 
 Figure_5.13 <- function() {
+    data(SeatacWeather, package = "latticeExtra")
+    maxp <- max(SeatacWeather$precip, na.rm = TRUE)
     plot(Figure_5.12()) ## FIXME: can we do this better?
     update(trellis.last.object(),
            ylab = "Temperature (Fahrenheit) \n and Rainfall (inches)",

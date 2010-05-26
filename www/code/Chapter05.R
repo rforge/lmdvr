@@ -56,6 +56,7 @@ xyplot(y ~ x | gl(1, length(types)),
        as.table = TRUE, layout = c(5, 3),
        between = list(y = c(0, 1)),
        strip = function(...) {
+           require(grid)
            panel.fill(trellis.par.get("strip.background")$col[1])
            type <- types[panel.number()]
            grid.text(lab = sprintf('"%s"', type), 

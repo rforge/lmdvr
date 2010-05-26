@@ -1,4 +1,5 @@
-setwd("/home/deepayan/svn/all/r-forge.r-project.org/lmdvr/www/code/split")
+## setwd("/home/deepayan/svn/all/r-forge.r-project.org/lmdvr/www/code/split")
+library(lattice)
 
 source("Chapter01_all.R")
 source("Chapter02_all.R")
