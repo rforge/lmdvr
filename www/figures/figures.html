@@ -404,6 +404,13 @@ biocLite(c("flowCore", "flowViz", "hexbin"))
       <br>
       <i>The American Statistician</i> 63(1):97-97, February 2009</li> 
 
+
+      <li>James Cheshire.
+      <a href="http://www3.interscience.wiley.com/cgi-bin/fulltext/123208813/HTMLSTART"
+      >Lattice: Multivariate Data Visualization with R</a>. 
+      <br>
+      <i>Journal of the Royal Statistical Society: Series A
+      (Statistics in Society)</i> 173(1):275-276, 2010</li>
     </ul>
   </div>
   
@@ -1216,9 +1223,9 @@ levelplot(fit.linear + fit.loess.1 + fit.loess.2 + fit.locfit ~
           data = grid)
 
 <span class="comment">## Figure 6.10</span>
-levelplot(fit.linear + fit.loess.1 + fit.loess.2 + fit.locfit ~ 
-                                     wind * temperature | radiation, 
-          data = grid)
+contourplot(fit.locfit ~ wind * temperature | radiation, 
+            data = grid, aspect = 0.7, layout = c(1, 4),
+            cuts = 15, label.style = "align")
 
 <span class="comment">## Figure 6.11</span>
 levelplot(volcano)
@@ -2317,7 +2324,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Sun Jan 17 02:09:08 PST 2010 <!-- hhmts end -->
+  <!-- hhmts start -->Last modified: Wed May 26 18:16:26 IST 2010 <!-- hhmts end -->
 </div>
 
 

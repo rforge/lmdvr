@@ -236,10 +236,48 @@ function hideReviews() {
 }
 
 
+function showFigureList(e) {
+    if (e.className != "FigureList") { // else nothing to do
+	var llist;
+	llist = e.getElementsByTagName("li");
+	for (var i = 0; i < llist.length; i++) {
+	    if (llist[i].style.display != "none")
+		llist[i].style.display = "none";
+	}
+	e.className = "FigureList";
+	var count = llist.length-1;
+	function showNextFigureEntry() {
+	    if (count >= 0) {
+		llist[count].style.display = "block";
+		count--;
+		setTimeout(showNextFigureEntry, 10);
+	    }
+	}
+	showNextFigureEntry();
+    }
+}
+
+function hideFigureList(e) {
+    if (e.className != "FigureListHidden") { // else nothing to do
+	var llist;
+	llist = e.getElementsByTagName("li");
+	var count = llist.length-1;
+	function hideNextFigureEntry() {
+	    if (count >= 0) {
+		llist[count].style.display = "none";
+		count--;
+		setTimeout(hideNextFigureEntry, 10);
+	    }
+	    else e.className = "FigureListHidden";
+	}
+	hideNextFigureEntry();
+    }
+}
+
 
 function chapterClicked(chap, resetFig) {
     var showFigList = 1;
-    if (resetFig) {
+    if (resetFig){ 
 	setCookie("figure=", "");
 	/* document.getElementById("SWITCH.LAYOUT").style.display = "none"; */
     }
@@ -251,7 +289,7 @@ function chapterClicked(chap, resetFig) {
 	if (cur_chap == chap && cur_fig == "" && document.getElementById("FIGURELIST." + cur_chap).className == "FigureList") {
 	    showFigList = 0;
 	}
-	document.getElementById("FIGURELIST." + cur_chap).className = "FigureListHidden";
+	hideFigureList(document.getElementById("FIGURELIST." + cur_chap));
 	document.getElementById("CHAPTER." + cur_chap).className = "topic";
 	document.getElementById("SUMMARY." + cur_chap).className = "summaryHidden";
 	document.getElementById("CODE." + cur_chap).className = "codeListingHidden";
@@ -267,7 +305,8 @@ function chapterClicked(chap, resetFig) {
     document.getElementById("SUMMARY.CONTAINER").className = "summaryContainer";
     document.getElementById("CODE." + cur_chap).className = "codeListing";
     document.getElementById("SWITCH.LAYOUT").style.display = "inline";
-    if (showFigList) document.getElementById("FIGURELIST." + cur_chap).className = "FigureList";
+    if (showFigList) 
+	showFigureList(document.getElementById("FIGURELIST." + cur_chap));
     document.getElementById("CHAPTER." + cur_chap).className = "htopic";
     setCookie("chapter=", chap);
 }

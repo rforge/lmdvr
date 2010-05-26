@@ -107,9 +107,6 @@ wireframe(fit.linear + fit.loess.1 + fit.loess.2 + fit.locfit ~
 levelplot(fit.linear + fit.loess.1 + fit.loess.2 + fit.locfit ~ 
                                      wind * temperature | radiation, 
           data = grid)
-levelplot(fit.linear + fit.loess.1 + fit.loess.2 + fit.locfit ~ 
-                                     wind * temperature | radiation, 
-          data = grid)
 contourplot(fit.locfit ~ wind * temperature | radiation, 
             data = grid, aspect = 0.7, layout = c(1, 4),
             cuts = 15, label.style = "align")
