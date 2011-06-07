@@ -349,7 +349,7 @@ destdir <- "." # modify as desired
 chapters <- sprintf("Chapter%02d.R", 1:14)
 for (i in chapters)
 {
-    download.file(url = paste(src, i, sep = ""),
+    download.file(url = paste(srcdir, i, sep = ""),
                   destfile = file.path(destdir, i))
 }
 </pre>
