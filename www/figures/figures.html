@@ -340,6 +340,31 @@ biocLite(c("flowCore", "flowViz", "hexbin"))
 </pre>
   </p>
 
+    <h2>Code access</h2>
+
+    <p>To download the chapter-wise code files in one go, you can use:</p>
+<pre>
+srcdir <- "http://lmdvr.r-forge.r-project.org/code/"
+destdir <- "." # modify as desired
+chapters <- sprintf("Chapter%02d.R", 1:14)
+for (i in chapters)
+{
+    download.file(url = paste(src, i, sep = ""),
+                  destfile = file.path(destdir, i))
+}
+</pre>
+
+
+    <h2>Further documentation</h2>
+
+    <p>Further documentation on lattice is planned, in the form of
+       short vignettes describing special use-cases and utilities not
+       covered in the book.  Such documentation will be available from
+       the <a
+       href="http://lattice.r-forge.r-project.org/documentation.php"
+       >lattice project website</a> at <a
+       href="http://www.r-forge.r-project.org/" >R-forge</a></p>
+
   </div>
 
   <div class="summaryHidden" id="SUMMARY.ERRATA">
@@ -2330,7 +2355,7 @@ piechart(VADeaths, groups = FALSE, xlab = "")
 
 <div class="footer">
   <address>deepayan.sarkar@r-project.org</address>
-  <!-- hhmts start -->Last modified: Thu Dec 23 15:12:54 IST 2010 <!-- hhmts end -->
+  <!-- hhmts start -->Last updated: Tue Jun  7 2011 <!-- hhmts end -->
 </div>
 
 
