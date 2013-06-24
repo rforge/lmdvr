@@ -88,8 +88,9 @@ function setPermaLink() {
 
 function initialize(theme) {
 
-    image_src = "http://dsarkar.fhcrc.org/lattice/book/images/";
+    // image_src = "http://dsarkar.fhcrc.org/lattice/book/images/";
     // for relative links: image_src = "images/" 
+    image_src = "images/";
 
     var cookieValue;
     global_theme = "";
