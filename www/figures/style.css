@@ -69,7 +69,7 @@ div.summary h3, div.summary h4
 div.codeContainer
 { 
   /* position: absolute; this screws up navigation */
-  font-family: "Andale mono";
+  font-family: "Andale mono" monospace;
   display: block;
 
   margin-left: 740px; /* 150px; */
